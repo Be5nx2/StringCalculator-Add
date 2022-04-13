@@ -128,5 +128,24 @@ class CalculatorTest {
         assertEquals(6, calculator.add(input));
     }
 
+    // Step 8
+    @Test
+    public void should_sumOfAmount_when_use2Delimiter() {
+        // specific format : //[delimiter]\n[numbers…]
+        final String input = "//[*][%]\n1*2%3";
+        final Calculator calculator = new Calculator();
+
+        assertEquals(6, calculator.add(input));
+    }
+
+    // Step 9
+    @Test
+    public void should_sumOfAmount_when_use3DelimiterWithDifferentLength() {
+        // specific format : //[delimiter]\n[numbers…]
+        final String input = "//[**][%%%][$$$$]\n1**2%%%3$$$$4";
+        final Calculator calculator = new Calculator();
+
+        assertEquals(10, calculator.add(input));
+    }
 
 }
