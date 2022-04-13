@@ -108,4 +108,25 @@ class CalculatorTest {
                 "negatives not allowed : -1, -5, -8");
     }
 
+    // Step 6
+    @Test
+    public void should_ignoreNumbersBiggerThan1000_when_inputHaveNumbersBiggerThan1000(){
+        final String input = "2,1001";
+        final Calculator calculator = new Calculator();
+
+        assertEquals(2, calculator.add(input));
+    }
+
+    // Step 7
+    //fixme : quid for delimiter with only // ? it's for delimiter with 1 character only ??
+    @Test
+    public void should_sumOfAmount_when_useDelimiterWithLength() {
+        // specific format : //[delimiter]\n[numbers…]
+        final String input = "//[***]\n1***2***3";
+        final Calculator calculator = new Calculator();
+
+        assertEquals(6, calculator.add(input));
+    }
+
+
 }
