@@ -97,4 +97,15 @@ class CalculatorTest {
                 "negatives not allowed : -1");
     }
 
+    // Bonus check
+    @Test
+    public void should_throwExceptionWithTheAllNegative_when_givenInputWithManyNegative() {
+        final String input = "-1,2,-5,-8,9";
+        final Calculator calculator = new Calculator();
+
+        assertThrowsExactly(IllegalArgumentException.class,
+                () -> calculator.add(input),
+                "negatives not allowed : -1, -5, -8");
+    }
+
 }
