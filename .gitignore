@@ -1,0 +1,6 @@
+out
+out/*
+.idea
+.idea/*
+
+StringCalculatorKata.iml
